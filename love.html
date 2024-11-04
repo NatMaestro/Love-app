@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Sweet Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0e6f6;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+        .message-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            background-color: #ff69b4;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff85c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <h1>Good Morning Gorgeous! It me the amazing Nat 😊</h1>
+        <p>You are very pretty. 😊</p>
+        <p>Will you be my sunshine? 🌞</p>
+        <button onclick="askForResponse()">Answer</button>
+    </div>
+
+    <script>
+        function askForResponse() {
+            let response;
+            while (response !== "yes" && response !== "Yes" && response !== "yeah") {
+                response = prompt("Will you be my sunshine? 🌞 (Say 'yes' to make my day!)");
+                if (response !== "yes" && response !== "Yes" && response !== "yeah") {
+                    alert("Aww, come on! You know you want to say yes! 😊");
+                }
+            }
+            // Update the message on the page after receiving a "yes"
+            document.querySelector('.message-box').innerHTML = `
+                <h1>Thank You! 💖</h1>
+                <p>I will keep your light in my heart all day to keep me warm. Have a lovely day! 🌞❤️</p>
+            `;
+        }
+    </script>
+</body>
+</html>
